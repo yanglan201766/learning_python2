@@ -12,16 +12,11 @@
   3.1英文：先分词，做词性标注，再根据词性标注判断句型。
    以下是我选取的五种英文句型（注意首单词大写）：
    a.特殊疑问句：句子首单词是what/how/why/when/where/which，最后是问号。
-   (tags[0][1] == "WRB" or tags[0][1] == "WP") and (tags[-1][0] == "?")
    b.一般疑问句：句子首单词是be/have/助动词/情态动词，第二个单词是名词/人称代词，最后是问号。
-   (tags[0][0]=="Did"or tags[0][0]=="Do"or tags[0][0]=="Does"or tags[0][0]=="Had"or tags[0][0]=="Has"or tags[0][0]=="How"or tags[0][0]=="Is" or tags[0][0]=="Am" or tags[0][0]=="Are") and (tags[1][1]=="PRP" or tags[1][1]=="DT" or tags[1][1]=="NN"or tags[1][1]=="NNS" or tags[1][1]=="NNP" or tags[1][1]=="NNPS" or tags[1][1]=="PRP$" ) and (tags[-1][0]=="?") and (tags[2][0]!="?")
    c.感叹句：首单词是how/what，最后是感叹号。
-   (tags[0][0] == "How" or tags[0][0] == "What" ) and (tags[-1][0] == "!")
    d.主谓宾：名词/人称代词/代词+动词+名词/人称代词/代词+动词，最后是句号。
-   (tags[0][1] == "NN" or tags[0][1] == "NNS" or tags[0][1] == "NNP" or tags[0][1] == "NNPS" or tags[0][1] == "PRP" or tags[0][1] == "PRP$") and (tags[1][1] == "VB" or tags[1][1] == "VBD" or tags[1][1] == "VBP" or tags[1][1] == "VBZ") and (tags[2][1] == "NN" or tags[2][1] == "NNS" or tags[2][1] == "NNP" or tags[2][1] == "NNPS" or tags[2][1] == "PRP" or tags[2][1] == "PRP$") and (tags[-1][0]==".")
    e.there be句型：首单词是there，第二个单词是be，最后是句号。
-   (tags[0][0] == "There") and (tags[1][0] == "is" or tags[1][0] == "are" or tags[1][0] == "was" or tags[1][0] == "were") and (tags[-1][0]==".")
-   
+  
   3.2中文
    以下是我选取的五种中文句型：
    a.是字句
